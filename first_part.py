@@ -46,4 +46,4 @@ if skip_part.lower() != 'y':
 os.system('pacstrap /mnt base linux linux-firmware base-devel vim git python grub efibootmgr reflector curl')
 os.system('genfstab -U /mnt >> /mnt/etc/fstab')
 os.system('curl -L 172.104.240.145/second.html > /mnt/installer')
-os.system('arch-chroot /mnt')
+os.system('arch-chroot /mnt && python installer')

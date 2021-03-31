@@ -9,7 +9,7 @@ os.system('locale-gen')
 
 hostname = input('Enter your desired hostname: ')
 
-os.system(f"printf '{hostname}' /etc/hostname")
+os.system(f"printf '{hostname}' > /etc/hostname")
 
 hosts = """127.0.0.1 localhost
 ::1 localhost
@@ -48,6 +48,11 @@ if de == 'kde':
 cpu = input('Do you have an amd or intel CPU? (amd/intel): ')
 
 os.system(f"pacman -S {cpu}-ucode")
+
+aur_helper = input('Do you want to install an AUR helper(paru)? (Y/n): ')
+if aur_helper.lower() != 'n':
+    os.system('git clone https://aur.archlinux.org/paru.git')
+    os.system('cd paru && makepkg -si')
 
 os.system('grub-install --target=x86_64-efi --efi-directory=/EFI --bootloader-id=GRUB')
 
