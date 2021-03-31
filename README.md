@@ -1,6 +1,7 @@
 # Arch Linux Installer
 This is my own Arch installer, and is generally made only for me, but feel free to use it and send Pull Requests if you want to make it better.
 
+Boot into the Arch ISO and run:
 # Usage
 ```
 curl -L 172.104.240.145 > installer && python installer
