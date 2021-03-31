@@ -21,6 +21,9 @@ if skip_part.lower() != 'y':
     if ans_swap.lower() == 'y':
         ans_swap_size = input("How big of a swap partition do you want? (in mb)")
         os.system(f'parted {disk} --script mkpart primary linux-swap 513MiB {ans_swap_size}MiB')
+    else:
+        ans_swap_size = 0
+
     os.system(f'parted {disk} --script set 1 esp on')
     os.system(f'parted {disk} --script mkpart primary ext4 {int(ans_swap_size) + 513}MiB 100%')
 
