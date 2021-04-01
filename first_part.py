@@ -1,7 +1,5 @@
 import os
 
-os.system('loadlkeys sv-latin1')
-
 skip_part = input('Skip partitioning? (y/N): ')
 
 if skip_part.lower() != 'y':
