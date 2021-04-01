@@ -51,7 +51,7 @@ os.system(f"pacman -S {cpu}-ucode")
 
 aur_helper = input('Do you want to install an AUR helper(paru)? (Y/n): ')
 if aur_helper.lower() != 'n':
-    os.system('su marcus')
+    os.system(f"su {username}")
     os.system('git clone https://aur.archlinux.org/paru.git')
     os.system('cd paru && makepkg -si')
     os.system('su')
